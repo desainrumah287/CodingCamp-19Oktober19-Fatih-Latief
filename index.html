@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="top-bar">
+    <span class="app-title">🗂️ Life Dashboard</span>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode">🌙</button>
+  </header>
+
+  <main class="grid-layout">
+
+    <!-- ===== GREETING CARD ===== -->
+    <section class="card greeting-card" aria-label="Greeting and Clock">
+      <div class="greeting-text">
+        <p id="greeting">Good Morning!</p>
+        <h1 id="clock">00:00:00</h1>
+        <p id="date-display">Monday, January 1, 2025</p>
+      </div>
+      <div class="name-row">
+        <input
+          type="text"
+          id="name-input"
+          placeholder="Enter your name…"
+          aria-label="Your name"
+          maxlength="30"
+        />
+        <button id="save-name-btn" class="btn btn-primary">Save</button>
+      </div>
+    </section>
+
+    <!-- ===== FOCUS TIMER CARD ===== -->
+    <section class="card timer-card" aria-label="Focus Timer">
+      <h2 class="card-title">⏱ Focus Timer</h2>
+      <div class="timer-display" aria-live="polite" aria-atomic="true" id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button id="timer-start" class="btn btn-primary">Start</button>
+        <button id="timer-stop"  class="btn btn-secondary">Stop</button>
+        <button id="timer-reset" class="btn btn-ghost">Reset</button>
+      </div>
+      <p id="timer-status" class="timer-status">Ready to focus!</p>
+    </section>
+
+    <!-- ===== TO-DO LIST CARD ===== -->
+    <section class="card todo-card" aria-label="To-Do List">
+      <h2 class="card-title">✅ To-Do List</h2>
+
+      <div class="todo-input-row">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Add a new task…"
+          aria-label="New task"
+          maxlength="120"
+        />
+        <button id="todo-add-btn" class="btn btn-primary">Add</button>
+      </div>
+
+      <!-- Inline duplicate warning -->
+      <p id="todo-warning" class="warning hidden" role="alert"></p>
+
+      <!-- Task stats -->
+      <div class="todo-stats">
+        <span id="todo-count">0 tasks</span>
+        <button id="clear-done-btn" class="btn btn-ghost btn-sm">Clear done</button>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-label="Task list"></ul>
+    </section>
+
+    <!-- ===== QUICK LINKS CARD ===== -->
+    <section class="card links-card" aria-label="Quick Links">
+      <h2 class="card-title">🔗 Quick Links</h2>
+
+      <div class="link-form">
+        <input
+          type="text"
+          id="link-name-input"
+          placeholder="Link name…"
+          aria-label="Link name"
+          maxlength="40"
+        />
+        <input
+          type="url"
+          id="link-url-input"
+          placeholder="https://example.com"
+          aria-label="Link URL"
+        />
+        <button id="link-add-btn" class="btn btn-primary">Add</button>
+      </div>
+
+      <p id="link-warning" class="warning hidden" role="alert"></p>
+
+      <div id="links-container" class="links-container" aria-label="Saved links"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with ❤️ · Data saved locally in your browser</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
